@@ -26,7 +26,7 @@ def get_ciphertext():
     Gathers ciphertext from web page
     :return: ciphertext
     """
-    ciphertext = urllib.request.urlopen(BASE_UR).read()
+    ciphertext = urllib.request.urlopen(BASE_URL).read()
     return ciphertext.decode("utf-8") 
 
 def check_padding(ciphertext):
@@ -36,7 +36,7 @@ def check_padding(ciphertext):
     :return: True if padding is correct, False otherwise.
     """
     cipher_url = urllib.parse.quote(b64encode(ciphertext)).replace("/", "%2f")
-    url = "{0}/decrypt?ciphertext={1}".format(BASE_UR, cipher_url)
+    url = "{0}/decrypt?ciphertext={1}".format(BASE_URL, cipher_url)
     try:
         return urllib.request.urlopen(url).getcode() == 200
     except:
@@ -93,7 +93,7 @@ def crack_message(blocks):
     return secret
 
 if __name__ == '__main__':
-    BASE_UR = "http://127.0.0.1:5000"
+    BASE_URL = "http://127.0.0.1:5000"
     blocks = return_blocks(b64decode(get_ciphertext()))
     block_size = len(blocks)
     if block_size <= 1:
