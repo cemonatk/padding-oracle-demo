@@ -1,6 +1,6 @@
 # Padding Oracle Demo
 
-This repository contains necessary scripts for the blog post that I shared on my blog: [cemk.me](https://cemk.me)
+This repository contains necessary scripts for the blog post that I shared on my blog: [cems.fun](https://cems.fun)
 
 [Part 1](https://cems.fun/2020/11/01/padding-oracle-1.html)
 [Part 2](https://cems.fun/2020/11/01/padding-oracle-2.html)
